@@ -23,7 +23,7 @@ const getUsers = async (req, res, next) => {
 
 const signup = async (req, res, next) => {
      const errors = validationResult(req);
-     if(!errors.isEmpty()) {
+     if (!errors.isEmpty()) {
           return next(
                new HttpError('Invalid input passed, please check your data.', 422)
           );
@@ -63,13 +63,13 @@ const signup = async (req, res, next) => {
   
        } catch(err){
             const error = new HttpError(
-               'Signing up failed please try again.',
+               'Signing up failed, please try again.',
                500
                );
                return next(error);
        }
 
-     res.json({ user: createdUser.toObject({getters: true}) });
+     res.status(201).json({ user: createdUser.toObject({getters: true}) });
 };
 
 const login = async (req, res, next) => {

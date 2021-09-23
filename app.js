@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-.connect('mongodb://kamdy:academind123@cluster0-shard-00-00.qddgg.mongodb.net:27017,cluster0-shard-00-01.qddgg.mongodb.net:27017,cluster0-shard-00-02.qddgg.mongodb.net:27017/places?ssl=true&replicaSet=atlas-1qtrnw-shard-0&authSource=admin&retryWrites=true&w=majority')
+.connect('mongodb://localhost:27017/place')
 .then(() => {
    app.listen(5000);
 })

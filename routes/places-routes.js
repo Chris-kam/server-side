@@ -17,7 +17,7 @@ router.post(
     .not().
     isEmpty(), 
     check('description')
-    .isLength({min: 5}), 
+    .isLength({min: 6}), 
     check('address')
     .not()
     .isEmpty()], 
